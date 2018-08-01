@@ -1,0 +1,332 @@
+@import "./print-styles/_lines";
+@import "./print-styles/_border";
+.title {
+  font-family: SimHei;
+  font-size: 15pt;
+  font-weight: bold;
+}
+
+.case-id {
+  font-family: SimSun;
+  font-size: 10.5pt;
+}
+
+.bold-label {
+  font-family: SimSun;
+  font-size: 14pt;
+  font-weight: bold;
+  text-align: center;
+}
+
+.text1 {
+  font-family: SimSun;
+  font-size: 26pt;
+}
+
+.text2 {
+  font-family: SimSun;
+  font-size: 22pt;
+}
+
+.text3 {
+  font-family: SimSun;
+  font-size: 16pt;
+}
+
+.text4 {
+  font-family: SimSun;
+  font-size: 12pt;
+}
+
+.text5 {
+  font-family: SimSun;
+  font-size: 10.5pt;
+}
+
+.page-num {
+  margin: 1rem;
+}
+
+.cell {
+  min-height: 16rem;
+}
+
+.sub-cell {
+  min-height: 15rem;
+}
+@media screen {
+  .content {
+    width: 170mm;
+    height: 237mm;
+    background-color: lightyellow;
+    //margin: 10mm;
+    //padding-top: 15.4mm;
+    //padding-bottom: 15.4mm;
+    //padding-left: 21.75mm;
+    //padding-right: 21.75mm;
+    //margin-top: 15.4mm;
+    //margin-bottom: 15.4mm;
+    //margin-left:  21.75mm;
+    //margin-right: 21.75mm;
+    font-family: SimSun;
+    font-size: 14pt;
+    border:1px solid red;
+  }
+}
+
+.text-indent2{
+  text-indent: 24pt;
+}
+.page-break
+{
+  page-break-after: always;
+}
+body{
+  font-family: SimSun;
+  font-size: 14pt;
+}
+@page  {
+  size: A4;
+  //padding-top: 15.4mm;
+  //padding-bottom: 15.4mm;
+  //padding-left: 21.75mm;
+  //padding-right: 21.75mm;
+  margin: 15mm 20mm;
+  @bottom-right {
+    content: counter(page) " of " counter(pages);
+  }
+}
+
+.group-span{
+  //text-indent: 28pt;
+  //padding: 1rem 1rem;
+  vertical-align: middle;
+  padding-left: 0.5rem;
+  line-height: 8.4mm;
+}
+
+.group-line{
+  min-height: 8.4mm;
+  line-height: 8.4mm;
+}
+.underline {
+  border-bottom: 1px solid black; }
+@media print {
+  .content {
+    width: 100%;
+    min-height: 99%;
+    font-family: SimSun;
+    font-size: 14pt;
+  }
+  .font16{
+    font-size: 16px;
+  }
+  .page-header{
+    background: #2db34a;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+  }
+  .page-footer{
+    background: red;
+    top: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+  }
+  illegal-behavior-print {
+    font-size: 12pt;
+    .print-case-id {
+      position: absolute;
+      top: 27mm;
+      left: 122mm
+    }
+
+    .print-people {
+      position: absolute;
+      top: 42mm;
+      left: 15mm
+    }
+    .print-type{
+      position: absolute;
+      top: 50mm;
+      left: 50mm
+    }
+    .print-behavior {
+      position: absolute;
+      width: 156mm;
+      top: 56mm;
+      left: 7mm;
+      text-indent: 65mm;
+      line-height: 8mm;
+    }
+
+    .print-law {
+      position: absolute;
+      width: 158mm;
+      top: 127mm;
+      left: 7mm;
+      text-indent: 15mm;
+      font-size: 9pt;
+      line-height: 8mm;
+    }
+    .print-money {
+      position: absolute;
+      top: 144mm;
+      left: 25mm
+    }
+    .print-address {
+      position: absolute;
+      top: 198mm;
+      left: 90mm
+    }
+    .print-phone {
+      position: absolute;
+      top: 205mm;
+      left: 90mm
+    }
+    .print-date {
+      font-size: 11pt;
+      position: absolute;
+      top: 220mm;
+      left: 112mm
+    }
+  }
+  decision-print{
+    font-size: 12pt;
+    .print-case-id {
+      position: absolute;
+      top: 27mm;
+      left: 122mm
+    }
+
+    .print-people {
+      position: absolute;
+      top: 42mm;
+      left: 40mm
+    }
+    .print-address{
+      position: absolute;
+      top: 50mm;
+      left: 40mm
+    }
+    .print-behavior {
+      //border: 1px solid red;
+      width: 156mm;
+      position: absolute;
+      top: 56mm;
+      left: 7mm;
+      text-indent: 65mm;
+      line-height: 8mm;
+      font-size: 9pt;
+    }
+
+    .print-law {
+      //border: 1px solid red;
+      width: 158mm;
+      position: absolute;
+      top: 127mm;
+      left: 6mm;
+      text-indent: 15mm;
+      font-size: 9pt;
+      line-height: 8mm;
+    }
+    .print-money {
+      position: absolute;
+      top: 144mm;
+      left: 45mm
+    }
+
+    .print-date {
+      font-size: 11pt;
+      position: absolute;
+      top: 235mm;
+      left: 97mm
+    }
+  }
+  correction-print {
+    font-size: 12pt;
+    .print-case-id {
+      position: absolute;
+      top: 30mm;
+      left: 122mm
+    }
+
+    .print-people {
+      position: absolute;
+      top: 55mm;
+      left: 10mm
+    }
+    .print-type{
+      position: absolute;
+      top: 64mm;
+      left: 50mm
+    }
+    .print-case-time{
+      position: absolute;
+      top: 72mm;
+      left: 13mm
+    }
+    .print-case-place{
+      position: absolute;
+      top: 72mm;
+      left: 65mm
+    }
+    .print-behavior {
+      position: absolute;
+      top: 78mm;
+      left: 20mm;
+    }
+    .print-law-reason{
+      position: absolute;
+      width: 158mm;
+      top: 86mm;
+      left: 7mm;
+      text-indent: 15mm;
+      font-size: 9pt;
+      line-height: 8mm;
+    }
+    .print-law {
+      position: absolute;
+      width: 158mm;
+      top: 102mm;
+      left: 7mm;
+      text-indent: 28mm;
+      font-size: 9pt;
+      line-height: 8mm;
+    }
+    .print-correction-time{
+      position: absolute;
+      top: 135mm;
+      left: 27mm
+    }
+    .print-require1{
+      position: absolute;
+      top: 143mm;
+      left: 25mm
+    }
+    .print-require2{
+      position: absolute;
+      top: 150mm;
+      left: 25mm
+    }
+    .print-address {
+      position: absolute;
+      top: 182mm;
+      left: 33mm
+    }
+    .print-phone {
+      position: absolute;
+      top: 191mm;
+      left: 33mm
+    }
+    .print-date {
+      font-size: 11pt;
+      position: absolute;
+      top: 239mm;
+      left: 106mm
+    }
+  }
+}
+

@@ -1,0 +1,196 @@
+@media print {
+  $lineHeight: 4.2mm;
+  .line {
+    min-height: $lineHeight;
+  }
+  .line2X {
+    min-height: $lineHeight * 2;
+  }
+  .sline2X {
+    height: $lineHeight * 1.9;
+  }
+  .line3X {
+    min-height: $lineHeight * 3;
+  }
+
+  .line4X {
+    min-height: $lineHeight * 4;
+  }
+
+  .line5X {
+    min-height: $lineHeight * 5;
+  }
+
+  .line6X {
+    min-height: $lineHeight * 6;
+  }
+
+  .line7X {
+    min-height: $lineHeight * 7;
+  }
+
+  .line8X {
+    min-height: $lineHeight * 8;
+  }
+
+  .line9X {
+    min-height: $lineHeight * 9;
+  }
+
+  .line10X {
+    min-height: $lineHeight * 10;
+  }
+  .line11X {
+    min-height: $lineHeight * 11;
+  }
+  .line12X {
+    min-height: $lineHeight * 12;
+  }
+
+  .line13X {
+    min-height: $lineHeight * 13;
+  }
+
+  .line14X {
+    min-height: $lineHeight * 14;
+  }
+  .line15X {
+    min-height: $lineHeight * 15;
+  }
+  .line16X {
+    min-height: $lineHeight * 16;
+  }
+  .line17X {
+    min-height: $lineHeight * 17;
+  }
+  .line18X {
+    min-height: $lineHeight * 18;
+  }
+  .line19X {
+    min-height: $lineHeight * 19;
+  }
+  .line20X {
+    min-height: $lineHeight * 20;
+  }
+
+  .lineHeight {
+    line-height: $lineHeight;
+  }
+
+  .lineHeight2X {
+    line-height: $lineHeight * 2;
+  }
+
+  .lineHeight3X {
+    line-height: $lineHeight * 3;
+  }
+
+  .lineHeight4X {
+    line-height: $lineHeight * 4;
+  }
+  .lineHeight5X {
+    line-height: $lineHeight * 5;
+  }
+  .lineHeight6X {
+    line-height: $lineHeight * 6;
+  }
+}
+
+@media screen {
+  $lineHeight: 4.2mm;
+  .line {
+    min-height: $lineHeight;
+  }
+  .sline2X {
+    height: $lineHeight * 1.9;
+  }
+  .line2X {
+    min-height: $lineHeight * 2;
+  }
+
+  .line3X {
+    min-height: $lineHeight * 3;
+  }
+
+  .line4X {
+    min-height: $lineHeight * 4;
+  }
+
+  .line5X {
+    min-height: $lineHeight * 5;
+  }
+
+  .line6X {
+    min-height: $lineHeight * 6;
+  }
+
+  .line7X {
+    min-height: $lineHeight * 7;
+  }
+
+  .line8X {
+    min-height: $lineHeight * 8;
+  }
+
+  .line9X {
+    min-height: $lineHeight * 9;
+  }
+
+  .line10X {
+    min-height: $lineHeight * 10;
+  }
+  .line11X {
+    min-height: $lineHeight * 11;
+  }
+  .line12X {
+    min-height: $lineHeight * 12;
+  }
+
+  .line13X {
+    min-height: $lineHeight * 13;
+  }
+
+  .line14X {
+    min-height: $lineHeight * 14;
+  }
+  .line15X {
+    min-height: $lineHeight * 15;
+  }
+  .line16X {
+    min-height: $lineHeight * 16;
+  }
+  .line17X {
+    min-height: $lineHeight * 17;
+  }
+  .line18X {
+    min-height: $lineHeight * 18;
+  }
+  .line19X {
+    min-height: $lineHeight * 19;
+  }
+  .line20X {
+    min-height: $lineHeight * 20;
+  }
+
+  .lineHeight {
+    line-height: $lineHeight;
+  }
+
+  .lineHeight2X {
+    line-height: $lineHeight * 2;
+  }
+
+  .lineHeight3X {
+    line-height: $lineHeight * 3;
+  }
+
+  .lineHeight4X {
+    line-height: $lineHeight * 4;
+  }
+  .lineHeight5X {
+    line-height: $lineHeight * 5;
+  }
+  .lineHeight6X {
+    line-height: $lineHeight * 6;
+  }
+}

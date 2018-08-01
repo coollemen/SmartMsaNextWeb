@@ -1,0 +1,449 @@
+@media print {
+  .line {
+    min-height: 4.2mm; }
+
+  .line2X {
+    min-height: 8.4mm; }
+
+  .sline2X {
+    height: 7.98mm; }
+
+  .line3X {
+    min-height: 12.6mm; }
+
+  .line4X {
+    min-height: 16.8mm; }
+
+  .line5X {
+    min-height: 21mm; }
+
+  .line6X {
+    min-height: 25.2mm; }
+
+  .line7X {
+    min-height: 29.4mm; }
+
+  .line8X {
+    min-height: 33.6mm; }
+
+  .line9X {
+    min-height: 37.8mm; }
+
+  .line10X {
+    min-height: 42mm; }
+
+  .line11X {
+    min-height: 46.2mm; }
+
+  .line12X {
+    min-height: 50.4mm; }
+
+  .line13X {
+    min-height: 54.6mm; }
+
+  .line14X {
+    min-height: 58.8mm; }
+
+  .line15X {
+    min-height: 63mm; }
+
+  .line16X {
+    min-height: 67.2mm; }
+
+  .line17X {
+    min-height: 71.4mm; }
+
+  .line18X {
+    min-height: 75.6mm; }
+
+  .line19X {
+    min-height: 79.8mm; }
+
+  .line20X {
+    min-height: 84mm; }
+
+  .lineHeight {
+    line-height: 4.2mm; }
+
+  .lineHeight2X {
+    line-height: 8.4mm; }
+
+  .lineHeight3X {
+    line-height: 12.6mm; }
+
+  .lineHeight4X {
+    line-height: 16.8mm; }
+
+  .lineHeight5X {
+    line-height: 21mm; }
+
+  .lineHeight6X {
+    line-height: 25.2mm; } }
+@media screen {
+  .line {
+    min-height: 4.2mm; }
+
+  .sline2X {
+    height: 7.98mm; }
+
+  .line2X {
+    min-height: 8.4mm; }
+
+  .line3X {
+    min-height: 12.6mm; }
+
+  .line4X {
+    min-height: 16.8mm; }
+
+  .line5X {
+    min-height: 21mm; }
+
+  .line6X {
+    min-height: 25.2mm; }
+
+  .line7X {
+    min-height: 29.4mm; }
+
+  .line8X {
+    min-height: 33.6mm; }
+
+  .line9X {
+    min-height: 37.8mm; }
+
+  .line10X {
+    min-height: 42mm; }
+
+  .line11X {
+    min-height: 46.2mm; }
+
+  .line12X {
+    min-height: 50.4mm; }
+
+  .line13X {
+    min-height: 54.6mm; }
+
+  .line14X {
+    min-height: 58.8mm; }
+
+  .line15X {
+    min-height: 63mm; }
+
+  .line16X {
+    min-height: 67.2mm; }
+
+  .line17X {
+    min-height: 71.4mm; }
+
+  .line18X {
+    min-height: 75.6mm; }
+
+  .line19X {
+    min-height: 79.8mm; }
+
+  .line20X {
+    min-height: 84mm; }
+
+  .lineHeight {
+    line-height: 4.2mm; }
+
+  .lineHeight2X {
+    line-height: 8.4mm; }
+
+  .lineHeight3X {
+    line-height: 12.6mm; }
+
+  .lineHeight4X {
+    line-height: 16.8mm; }
+
+  .lineHeight5X {
+    line-height: 21mm; }
+
+  .lineHeight6X {
+    line-height: 25.2mm; } }
+.border {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black; }
+
+.borderHead {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black; }
+
+.borderFoot {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black; }
+
+.borderLeft {
+  border-left: 1px solid black; }
+
+.borderRight {
+  border-right: 1px solid black; }
+
+.borderTop {
+  border-top: 1px solid black; }
+
+.borderBottom {
+  border-bottom: 1px solid black; }
+
+.title {
+  font-family: SimHei;
+  font-size: 15pt;
+  font-weight: bold; }
+
+.case-id {
+  font-family: SimSun;
+  font-size: 10.5pt; }
+
+.bold-label {
+  font-family: SimSun;
+  font-size: 14pt;
+  font-weight: bold;
+  text-align: center; }
+
+.text1 {
+  font-family: SimSun;
+  font-size: 26pt; }
+
+.text2 {
+  font-family: SimSun;
+  font-size: 22pt; }
+
+.text3 {
+  font-family: SimSun;
+  font-size: 16pt; }
+
+.text4 {
+  font-family: SimSun;
+  font-size: 12pt; }
+
+.text5 {
+  font-family: SimSun;
+  font-size: 10.5pt; }
+
+.page-num {
+  margin: 1rem; }
+
+.cell {
+  min-height: 16rem; }
+
+.sub-cell {
+  min-height: 15rem; }
+
+@media screen {
+  .content {
+    width: 170mm;
+    height: 237mm;
+    background-color: lightyellow;
+    font-family: SimSun;
+    font-size: 14pt;
+    border: 1px solid red; } }
+.text-indent2 {
+  text-indent: 24pt; }
+
+.page-break {
+  page-break-after: always; }
+
+body {
+  font-family: SimSun;
+  font-size: 14pt; }
+
+@page {
+  size: A4;
+  margin: 15mm 20mm;
+  @bottom-right {
+    content: counter(page) " of " counter(pages); } }
+.group-span {
+  vertical-align: middle;
+  padding-left: 0.5rem;
+  line-height: 8.4mm; }
+
+.group-line {
+  min-height: 8.4mm;
+  line-height: 8.4mm; }
+
+.underline {
+  border-bottom: 1px solid black; }
+
+@media print {
+  .content {
+    width: 100%;
+    min-height: 99%;
+    font-family: SimSun;
+    font-size: 14pt; }
+
+  .font16 {
+    font-size: 16px; }
+
+  .page-header {
+    background: #2db34a;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0; }
+
+  .page-footer {
+    background: red;
+    top: 0;
+    left: 0;
+    position: fixed;
+    right: 0; }
+
+  illegal-behavior-print {
+    font-size: 12pt; }
+    illegal-behavior-print .print-case-id {
+      position: absolute;
+      top: 27mm;
+      left: 122mm; }
+    illegal-behavior-print .print-people {
+      position: absolute;
+      top: 42mm;
+      left: 15mm; }
+    illegal-behavior-print .print-type {
+      position: absolute;
+      top: 50mm;
+      left: 50mm; }
+    illegal-behavior-print .print-behavior {
+      position: absolute;
+      width: 156mm;
+      top: 56mm;
+      left: 7mm;
+      text-indent: 65mm;
+      line-height: 8mm; }
+    illegal-behavior-print .print-law {
+      position: absolute;
+      width: 158mm;
+      top: 127mm;
+      left: 7mm;
+      text-indent: 15mm;
+      font-size: 9pt;
+      line-height: 8mm; }
+    illegal-behavior-print .print-money {
+      position: absolute;
+      top: 144mm;
+      left: 25mm; }
+    illegal-behavior-print .print-address {
+      position: absolute;
+      top: 198mm;
+      left: 90mm; }
+    illegal-behavior-print .print-phone {
+      position: absolute;
+      top: 205mm;
+      left: 90mm; }
+    illegal-behavior-print .print-date {
+      font-size: 11pt;
+      position: absolute;
+      top: 220mm;
+      left: 112mm; }
+
+  decision-print {
+    font-size: 12pt; }
+    decision-print .print-case-id {
+      position: absolute;
+      top: 27mm;
+      left: 122mm; }
+    decision-print .print-people {
+      position: absolute;
+      top: 42mm;
+      left: 40mm; }
+    decision-print .print-address {
+      position: absolute;
+      top: 50mm;
+      left: 40mm; }
+    decision-print .print-behavior {
+      width: 156mm;
+      position: absolute;
+      top: 56mm;
+      left: 7mm;
+      text-indent: 65mm;
+      line-height: 8mm;
+      font-size: 9pt; }
+    decision-print .print-law {
+      width: 158mm;
+      position: absolute;
+      top: 127mm;
+      left: 6mm;
+      text-indent: 15mm;
+      font-size: 9pt;
+      line-height: 8mm; }
+    decision-print .print-money {
+      position: absolute;
+      top: 144mm;
+      left: 45mm; }
+    decision-print .print-date {
+      font-size: 11pt;
+      position: absolute;
+      top: 235mm;
+      left: 97mm; }
+
+  correction-print {
+    font-size: 12pt; }
+    correction-print .print-case-id {
+      position: absolute;
+      top: 30mm;
+      left: 122mm; }
+    correction-print .print-people {
+      position: absolute;
+      top: 55mm;
+      left: 10mm; }
+    correction-print .print-type {
+      position: absolute;
+      top: 64mm;
+      left: 50mm; }
+    correction-print .print-case-time {
+      position: absolute;
+      top: 72mm;
+      left: 13mm; }
+    correction-print .print-case-place {
+      position: absolute;
+      top: 72mm;
+      left: 65mm; }
+    correction-print .print-behavior {
+      position: absolute;
+      top: 78mm;
+      left: 20mm; }
+    correction-print .print-law-reason {
+      position: absolute;
+      width: 158mm;
+      top: 86mm;
+      left: 7mm;
+      text-indent: 15mm;
+      font-size: 9pt;
+      line-height: 8mm; }
+    correction-print .print-law {
+      position: absolute;
+      width: 158mm;
+      top: 102mm;
+      left: 7mm;
+      text-indent: 28mm;
+      font-size: 9pt;
+      line-height: 8mm; }
+    correction-print .print-correction-time {
+      position: absolute;
+      top: 135mm;
+      left: 27mm; }
+    correction-print .print-require1 {
+      position: absolute;
+      top: 143mm;
+      left: 25mm; }
+    correction-print .print-require2 {
+      position: absolute;
+      top: 150mm;
+      left: 25mm; }
+    correction-print .print-address {
+      position: absolute;
+      top: 182mm;
+      left: 33mm; }
+    correction-print .print-phone {
+      position: absolute;
+      top: 191mm;
+      left: 33mm; }
+    correction-print .print-date {
+      font-size: 11pt;
+      position: absolute;
+      top: 239mm;
+      left: 106mm; } }
+
+/*# sourceMappingURL=print-styles.css.map */
