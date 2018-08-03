@@ -25,7 +25,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent, data: { title: '仪表盘', titleI18n: 'dashboard' } },
-      { path: 'duty-roster', loadChildren: './duty-roster/duty-roster.module#DutyRoster' },
+      { path: 'duty-roster', loadChildren: './duty-roster/duty-roster.module#DutyRosterModule' },
       // 业务子模块
       // { path: 'widgets', loadChildren: './widgets/widgets.module#WidgetsModule' }
     ]
