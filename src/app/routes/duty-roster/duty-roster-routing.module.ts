@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DutyRosterConfigComponent } from './config/config.component';
-
 const routes: Routes = [
-
-  {  },
-  { path: 'config', component: DutyRosterConfigComponent }];
+  {path:'config',component: DutyRosterConfigComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
