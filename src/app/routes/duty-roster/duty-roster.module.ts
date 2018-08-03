@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '@shared/shared.module';
 import { DutyRosterRoutingModule } from './duty-roster-routing.module';
-import { DutyRosterDutyConfigComponent } from './duty-config/duty-config.component';
-import { DutyRosterDutyConfigEditComponent } from './duty-config/edit/edit.component';
-import { DutyRosterDutyConfigViewComponent } from './duty-config/view/view.component';
+import { DutyRosterConfigComponent } from './config/config.component';
+import { DutyRosterConfigEditComponent } from './config/edit/edit.component';
+import { DutyRosterConfigViewComponent } from './config/view/view.component';
+
 
 const COMPONENTS = [
-  DutyRosterDutyConfigComponent];
+
+  DutyRosterConfigComponent];
 const COMPONENTS_NOROUNT = [
-  DutyRosterDutyConfigEditComponent,
-  DutyRosterDutyConfigViewComponent];
+
+  DutyRosterConfigEditComponent,
+  DutyRosterConfigViewComponent];
 
 @NgModule({
   imports: [
