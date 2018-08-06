@@ -89,10 +89,21 @@ export class StartupService {
             icon: 'anticon anticon-appstore-o'
           },
           {
-            text: '快捷菜单',
+            text: '行政执法',
             icon: 'anticon anticon-rocket',
             shortcut_root: true
-          }
+          },
+          {
+            text: '值班表',
+            link: '/duty-roster/config',
+            icon: 'anticon anticon-table',
+            shortcut_root: true
+          },
+          {
+            text: '巡航计划',
+            icon: 'anticon anticon-rocket',
+            shortcut_root: true
+          },
         ]
       }
     ]);
