@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { _HttpClient, ModalHelper } from '@delon/theme';
 import { SimpleTableColumn, SimpleTableComponent } from '@delon/abc';
 import { SFSchema } from '@delon/form';
+import { DutyRosterConfigEditComponent } from './edit/edit.component';
 
 @Component({
   selector: 'app-duty-roster-config',
@@ -26,8 +27,8 @@ export class DutyRosterConfigComponent implements OnInit {
     {
       title: '',
       buttons: [
-        // { text: '查看', click: (item: any) => `/form/${item.id}` },
-        // { text: '编辑', type: 'static', component: FormEditComponent, click: 'reload' },
+        { text: '查看', click: (item: any) => `/form/${item.id}` },
+        { text: '编辑', type: 'static', component: DutyRosterConfigEditComponent, click: 'reload' },
       ]
     }
   ];
@@ -37,9 +38,9 @@ export class DutyRosterConfigComponent implements OnInit {
   ngOnInit() { }
 
   add() {
-    // this.modal
-    //   .createStatic(FormEditComponent, { i: { id: 0 } })
-    //   .subscribe(() => this.st.reload());
+    this.modal
+      .createStatic(DutyRosterConfigEditComponent, { i: { id: 0 } })
+      .subscribe(() => this.st.reload());
   }
 
 }
