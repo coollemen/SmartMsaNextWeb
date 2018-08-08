@@ -13,8 +13,8 @@ import { DefaultInterceptor } from '@core/net/default.interceptor';
 import { SimpleInterceptor } from '@delon/auth';
 // angular i18n
 import { registerLocaleData } from '@angular/common';
-import localeZhHans from '@angular/common/locales/zh-Hans';
-registerLocaleData(localeZhHans);
+import zh from '@angular/common/locales/zh';
+registerLocaleData(zh);
 
 // @delon/form: JSON Schema form
 import { JsonSchemaModule } from '@shared/json-schema/json-schema.module';

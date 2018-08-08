@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,UAAU;EACR,MAAM,EAAE,KAAK;EACb,QAAQ,EAAE,MAAM;;AAElB,SAAS;EACP,KAAK,EAAE,GAAG;;AAEZ,KAAK;EACH,OAAO,EAAE,IAAI",
+"sources": ["duty-config.component.scss"],
+"names": [],
+"file": "duty-config.component.css"
+}

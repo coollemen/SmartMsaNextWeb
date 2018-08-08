@@ -62,8 +62,8 @@ export class StartupService {
     // }
     // mock
     const app: any = {
-      name: `ng-alain`,
-      description: `Ng-zorro admin panel front-end framework`
+      name: `Smart Office`,
+      description: `浦东新区地方海事处智慧办公平台`
     };
     const user: any = {
       name: 'Admin',
@@ -97,7 +97,17 @@ export class StartupService {
             text: '值班表',
             link: '/duty-roster/config',
             icon: 'anticon anticon-table',
-            shortcut_root: true
+            shortcut_root: true,
+            "children": [
+              {
+                "text": "值班查询",
+                "link": "/duty-roster/view",
+              },
+              {
+                "text": "人员设置",
+                "link": "/duty-roster/config",
+              }
+            ]
           },
           {
             text: '巡航计划',

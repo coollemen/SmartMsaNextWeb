@@ -1,0 +1,102 @@
+<div nz-row nzType="flex" nzJustify="end" style="padding: 16px">
+  <div nz-col [nzSpan]="12">
+    <input  nz-input placeholder="请输入姓名" #nameInput>
+  </div>
+  <div nz-col [nzSpan]="5" [nzOffset]="1">
+    <nz-select style="width: 100%" nzPlaceHolder="人员类别" [(ngModel)]="peopleType">
+      <nz-option nzValue="海事人员" nzLabel="海事人员"></nz-option>
+      <nz-option nzValue="领导" nzLabel="领导"></nz-option>
+      <nz-option nzValue="值班长" nzLabel="值班长" ></nz-option>
+      <nz-option nzValue="协管员" nzLabel="协管员" ></nz-option>
+    </nz-select>
+  </div>
+  <div nz-col [nzSpan]="5" [nzOffset]="1">
+    <button nz-button nzType="primary" (click)="addNewPeople(nameInput.value)" ><i class="anticon anticon-plus"></i>添加</button>
+  </div>
+</div>
+ <div nz-row>
+  <div nz-col [nzSpan]="6"  class="list" >
+    <span><h4>海事人员名单</h4></span>
+    <div nz-row style="padding-bottom: 8px">
+      <div nz-col [nzSpan]="12">
+        <span>海事人员当前索引：</span>
+      </div>
+      <div nz-col [nzSpan]="12">
+        <input  nz-input [(ngModel)]="config.msaIndex" >
+      </div>
+    </div>
+    <nz-list class="name-list" [nzDataSource]="config.msaPeoples" nzBordered
+             [nzRenderItem]="itemMsa">
+      <ng-template #itemMsa let-item>
+        <nz-list-item [nzContent]="item" [nzActions]="[upMsaAction,downMsaAction,deleteMsaAction]">
+          <ng-template #upMsaAction><a (click)="itemUp(itemMsa,'海事人员')"><i class="anticon anticon-up"></i></a></ng-template>
+          <ng-template #downMsaAction><a (click)="itemDown(itemMsa,'海事人员')"><i class="anticon anticon-down"></i></a></ng-template>
+          <ng-template #deleteMsaAction><a (click)="itemDelete(itemMsa,'海事人员')"><i class="anticon anticon-close red-icon"></i></a></ng-template>
+        </nz-list-item>
+      </ng-template>
+    </nz-list>
+  </div>
+   <div nz-col [nzSpan]="6"  class="list"  >
+     <span><h4>领导名单</h4></span>
+     <div nz-row style="padding-bottom: 8px">
+       <div nz-col [nzSpan]="12">
+         <span>领导当前索引：</span>
+       </div>
+       <div nz-col [nzSpan]="12">
+         <input  nz-input [(ngModel)]="config.leaderIndex" >
+       </div>
+     </div>
+     <nz-list class="name-list" [nzDataSource]="config.leaderPeoples" nzBordered
+              [nzRenderItem]="itemLeader">
+       <ng-template #itemLeader let-item>
+         <nz-list-item [nzContent]="item" [nzActions]="[upLeaderAction,downLeaderAction,deleteLeaderAction]">
+           <ng-template #upLeaderAction><a (click)="itemUp(itemLeader,'领导')"><i class="anticon anticon-up"></i></a></ng-template>
+           <ng-template #downLeaderAction><a (click)="itemDown(itemLeader,'领导')"><i class="anticon anticon-down"></i></a></ng-template>
+           <ng-template #deleteLeaderAction><a (click)="itemDelete(itemLeader,'领导')"><i class="anticon anticon-close red-icon"></i></a></ng-template>
+         </nz-list-item>
+       </ng-template>
+     </nz-list>
+   </div>
+   <div nz-col [nzSpan]="6"  class="list"   >
+     <span><h4>值班长名单</h4></span>
+     <div nz-row style="padding-bottom: 8px">
+       <div nz-col [nzSpan]="12">
+         <span>值班长当前索引：</span>
+       </div>
+       <div nz-col [nzSpan]="12">
+         <input  nz-input [(ngModel)]="config.commanderIndex" >
+       </div>
+     </div>
+     <nz-list class="name-list" [nzDataSource]="config.commanderPeoples" nzBordered
+              [nzRenderItem]="itemCommand">
+       <ng-template #itemCommand let-item>
+         <nz-list-item [nzContent]="item" [nzActions]="[upCommandAction,downCommandAction,deleteCommandAction]">
+           <ng-template #upCommandAction><a (click)="itemUp(itemCommand,'值班长')"><i class="anticon anticon-up"></i></a></ng-template>
+           <ng-template #downCommandAction><a (click)="itemDown(itemCommand,'值班长')"><i class="anticon anticon-down"></i></a></ng-template>
+           <ng-template #deleteCommandAction><a (click)="itemDelete(itemCommand,'值班长')"><i class="anticon anticon-close red-icon"></i></a></ng-template>
+         </nz-list-item>
+       </ng-template>
+     </nz-list>
+   </div>
+   <div nz-col [nzSpan]="6" class="list"  >
+     <span><h4>协管员名单</h4></span>
+     <div nz-row style="padding-bottom: 8px">
+       <div nz-col [nzSpan]="12">
+         <span>协管员当前索引：</span>
+       </div>
+       <div nz-col [nzSpan]="12">
+         <input  nz-input [(ngModel)]="config.assistantIndex" >
+       </div>
+     </div>
+     <nz-list class="name-list" [nzDataSource]="config.assistantPeoples" nzBordered
+              [nzRenderItem]="item">
+       <ng-template #item let-item>
+         <nz-list-item [nzContent]="item" [nzActions]="[upAction,downAction,deleteAction]">
+           <ng-template #upAction><a (click)="itemUp(item,'协管员')"><i class="anticon anticon-up"></i></a></ng-template>
+           <ng-template #downAction><a (click)="itemDown(item,'协管员')"><i class="anticon anticon-down"></i></a></ng-template>
+           <ng-template #deleteAction><a (click)="itemDelete(item,'协管员')"><i class="anticon anticon-close red-icon"></i></a></ng-template>
+         </nz-list-item>
+       </ng-template>
+     </nz-list>
+   </div>
+ </div>
