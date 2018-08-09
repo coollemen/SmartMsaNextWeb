@@ -41,7 +41,7 @@ export class DutyRosterComponent implements OnInit {
     }
   ];
 
-  constructor(private http: _HttpClient, private modal: ModalHelper,dutyRosterService:DutyRosterService) {
+  constructor(private http: _HttpClient, private modal: ModalHelper,private dutyRosterService:DutyRosterService) {
     this.date=new Date();
     this.config=new DutyRosterConfig();
   }
@@ -67,13 +67,16 @@ export class DutyRosterComponent implements OnInit {
     let maxDate=this.getDaysInOneMonth(year,month);
     console.log(`${year},${month},${maxDate}`);
     let dutyItems:DutyItem[]=[];
-    for(let i=0;i<maxDate;i++){
-      let item=new DutyItem();
-      let day=new Date(year,month,i+1);
-      console.log(day);
-      item.date=day;
-
-    }
+    // for(let i=0;i<maxDate;i++){
+    //   let item=new DutyItem();
+    //   let day=new Date(year,month,i+1);
+    //   console.log(day);
+    //   item.date=day;
+    //
+    // }
+    this.dutyRosterService.getHolidays(year,month).subscribe(res=>{
+      console.log(res);
+    });
   }
 
   /**

@@ -106,6 +106,10 @@ export class StartupService {
               {
                 "text": "人员设置",
                 "link": "/duty-roster/config",
+              },
+              {
+                "text": "节假日设置",
+                "link": "/duty-roster/holidays",
               }
             ]
           },

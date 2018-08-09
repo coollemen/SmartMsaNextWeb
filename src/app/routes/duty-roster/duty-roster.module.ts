@@ -6,12 +6,16 @@ import { DutyRosterConfigEditComponent } from './config/edit/edit.component';
 import { DutyRosterConfigViewComponent } from './config/view/view.component';
 import { DutyRosterComponent } from './duty-roster/duty-roster.component';
 import { DutyRosterService } from './services/duty-roster.service';
+import { HttpClientModule } from '@angular/common/http';
+import { JsonpModule } from '@angular/http';
+import { DutyRosterHolidaysComponent } from './holidays/holidays.component';
 
 
 const COMPONENTS = [
 
   DutyRosterConfigComponent,
-  DutyRosterComponent];
+  DutyRosterComponent,
+  DutyRosterHolidaysComponent];
 const COMPONENTS_NOROUNT = [
 
   DutyRosterConfigEditComponent,
@@ -20,7 +24,10 @@ const COMPONENTS_NOROUNT = [
 @NgModule({
   imports: [
     SharedModule,
-    DutyRosterRoutingModule
+    DutyRosterRoutingModule,
+    HttpClientModule,
+    JsonpModule
+
   ],
   declarations: [
     ...COMPONENTS,
