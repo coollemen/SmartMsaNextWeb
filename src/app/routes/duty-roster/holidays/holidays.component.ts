@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { _HttpClient } from '@delon/theme';
+import { _HttpClient, ModalHelper } from '@delon/theme';
+import { DutyRosterConfigEditComponent } from '../config/edit/edit.component';
+import { DutyRosterHolidaysEditComponent } from './edit/edit.component';
 
 @Component({
   selector: 'app-duty-roster-holidays',
@@ -33,10 +35,16 @@ export class DutyRosterHolidaysComponent implements OnInit {
     }
     return null;
   }
-  constructor(private http: _HttpClient) { }
+  constructor(private modal: ModalHelper) { }
 
   ngOnInit() { }
   onDateChanged(date:Date){
     this.selectedValue=date;
+  }
+  public add(){
+    let text=`${this.selectedValue.getFullYear()}-${this.selectedValue.getMonth()+1}-${this.selectedValue.getDate()}`
+    this.modal
+      .createStatic(DutyRosterHolidaysEditComponent, { i: { date1:text,date2:text} })
+      .subscribe(() => {});
   }
 }

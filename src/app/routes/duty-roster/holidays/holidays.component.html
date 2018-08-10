@@ -1,4 +1,8 @@
-<nz-alert nzMessage="Your selected date: {{ selectedValue | date:'yyyy-MM-dd' }}"></nz-alert>
+<page-header>
+  <ng-template #action>
+    <button (click)="add()" nz-button nzType="primary">新建</button>
+  </ng-template>
+</page-header>
 <nz-calendar [ngModel]="selectedValue" (ngModelChange)="onDateChanged($event)">
   <ul *nzDateCell="let date" class="events">
     <ng-container [ngSwitch]="date.getDate()">

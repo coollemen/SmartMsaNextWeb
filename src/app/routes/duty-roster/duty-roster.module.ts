@@ -7,8 +7,8 @@ import { DutyRosterConfigViewComponent } from './config/view/view.component';
 import { DutyRosterComponent } from './duty-roster/duty-roster.component';
 import { DutyRosterService } from './services/duty-roster.service';
 import { HttpClientModule } from '@angular/common/http';
-import { JsonpModule } from '@angular/http';
 import { DutyRosterHolidaysComponent } from './holidays/holidays.component';
+import { DutyRosterHolidaysEditComponent } from './holidays/edit/edit.component';
 
 
 const COMPONENTS = [
@@ -19,14 +19,14 @@ const COMPONENTS = [
 const COMPONENTS_NOROUNT = [
 
   DutyRosterConfigEditComponent,
-  DutyRosterConfigViewComponent];
+  DutyRosterConfigViewComponent,
+  DutyRosterHolidaysEditComponent];
 
 @NgModule({
   imports: [
     SharedModule,
     DutyRosterRoutingModule,
     HttpClientModule,
-    JsonpModule
 
   ],
   declarations: [

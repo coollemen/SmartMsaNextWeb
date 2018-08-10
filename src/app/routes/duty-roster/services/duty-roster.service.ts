@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import { BmobService } from '../../../shared/services/bmob.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Jsonp } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -10,9 +9,10 @@ import { Jsonp } from '@angular/http';
 })
 export class DutyRosterService extends BmobService {
 
-  constructor(private http: HttpClient,private  jsonp:Jsonp) {
+  constructor(private http: HttpClient) {
     super();
   }
+
   public getHolidays(year:number,month:number){
     let url='http://lanfly.vicp.io/api/holiday/batch?d=';
     let maxDate=this.getDaysInOneMonth(year,month);
