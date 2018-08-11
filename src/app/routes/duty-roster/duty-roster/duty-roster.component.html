@@ -1,0 +1,13 @@
+<page-header>
+  <ng-template #action>
+    <nz-month-picker [(ngModel)]="date" (ngModelChange)="onChange($event)" nzPlaceHolder="选择月份" style="padding-right: 16px"></nz-month-picker>
+    <button (click)="createDutyRosterByMonth()" nz-button nzType="primary">查询</button>
+    <button (click)="add()" nz-button nzType="primary">锁定</button>
+    <button (click)="add()" nz-button nzType="danger">解锁</button>
+  </ng-template>
+</page-header>
+<nz-card>
+  <sf mode="search" [schema]="searchSchema" (formSubmit)="st.reset($event)" (formReset)="st.reset($event)"></sf>
+  <br>
+  <simple-table #st [data]="url" [columns]="columns"></simple-table>
+</nz-card>
