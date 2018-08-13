@@ -72,31 +72,13 @@ export class DutyRosterHolidaysEditComponent implements OnInit {
     console.log( date2);
     if(date1>date2){
       console.log("起始日期大于借宿日期！");
-    }else{
-      let temp=date1;
-      while (temp<=date2){
-        let info=new HolidayInfo();
-        info.date=new Date(temp);
-        info.holiday=value.holiday;
-        info.name=value.name;
-        setTimeout(()=>{
-          console.log("日期");
-          console.log(info.date);
-          this.dutyRosterService.save(info).then(
-            res=>{
-
-            },
-            error=>{
-              alert(error);
-            }
-          );
-        },1000);
-        temp.setDate(temp.getDate()+1);
-
-        // console.log(temp);
-
-      }
-
+    }
+    else{
+      this.dutyRosterService.saveHolidaysBatch(date1,date2,value.holiday,value.name).subscribe(
+        res=>{
+          alert(res);
+        }
+      )
     }
 
   }
