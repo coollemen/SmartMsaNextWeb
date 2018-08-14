@@ -74,9 +74,6 @@ export class DutyRosterComponent implements OnInit {
     //   item.date=day;
     //
     // }
-    this.dutyRosterService.getHolidays(year,month).subscribe(res=>{
-      console.log(res);
-    });
   }
 
   /**

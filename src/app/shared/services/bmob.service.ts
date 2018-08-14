@@ -21,7 +21,8 @@ export class BmobService {
    * @param {Function} constructor 构造函数
    * @returns {Bmob.Query} 查询类
    */
-  public createQuery(constructor: Function): Bmob.Query {
+  public createQuery<T extends BmobData>(Type:new()=>T): Bmob.Query {
+    let constructor=new Type().constructor;
     let metadata: BmobObjectMetadata = Reflect.getMetadata(bmobObjectMetadataKey, constructor);
     let query = new Bmob.Query(metadata.type);
     return query;
@@ -32,7 +33,7 @@ export class BmobService {
    * @param {Bmob.Query} query
    * @returns {Promise<T extends BmobData>}
    */
-  public first<T extends BmobData>(query: Bmob.Query): Promise<T> {
+  public first<T extends BmobData>(query: Bmob.Query,ttype:new() => T): Promise<T> {
     let promise: Promise<T>;
     query.first(null).then(result => {
       let TType: new() => T;
@@ -65,13 +66,13 @@ export class BmobService {
    * @param {Bmob.Query} query
    * @returns {Promise<T[]>}
    */
-  public find<T extends BmobData>(query: Bmob.Query): Promise<T[]> {
+  public find<T extends BmobData>(query: Bmob.Query,ttype:new() => T): Promise<T[]> {
     let promise: Promise<T[]>;
-    query.find(null).then(results => {
+    return query.find(null).then(results => {
       let TType: new() => T;
       let datas: T[] = [];
       for (let i = 0; i < results.length; i++) {
-        let d: T = new TType();
+        let d: T = new ttype();
         d.data = results[i];
         //设置字段数据
         let fields: BmobFieldMetadata[] = Reflect.getMetadata(bmobFieldMetadataKey, d) as BmobFieldMetadata[];
@@ -86,16 +87,16 @@ export class BmobService {
         //添加入数组
         datas.push(d);
       }
-      promise = new Promise(function(resolve, reject) {        //做一些异步操作
+      return promise = new Promise(function(resolve, reject) {        //做一些异步操作
         resolve(datas);
       });
     }, error => {
       alert('查询失败: ' + error.code + ' ' + error.message);
-      promise = new Promise(function(resolve, reject) {        //做一些异步操作
+      return promise = new Promise(function(resolve, reject) {        //做一些异步操作
         reject(error);
       });
     });
-    return promise;
+     // return promise;
   }
 
   public saveAll(bmobObjs: BmobData[]): any {

@@ -5,22 +5,9 @@
 </page-header>
 <nz-calendar [ngModel]="selectedValue" (ngModelChange)="onDateChanged($event)">
   <ul *nzDateCell="let date" class="events">
-    <ng-container [ngSwitch]="date.getDate()">
-      <ng-container *ngSwitchCase="8">
-        <li *ngFor="let item of listDataMap.eight">
-          <nz-badge [nzStatus]="item.type" [nzText]="item.content"></nz-badge>
-        </li>
-      </ng-container>
-      <ng-container *ngSwitchCase="10">
-        <li *ngFor="let item of listDataMap.ten">
-          <nz-badge [nzStatus]="item.type" [nzText]="item.content"></nz-badge>
-        </li>
-      </ng-container>
-      <ng-container *ngSwitchCase="11">
-        <li *ngFor="let item of listDataMap.eleven">
-          <nz-badge [nzStatus]="item.type" [nzText]="item.content"></nz-badge>
-        </li>
-      </ng-container>
+    <ng-container *ngIf="isHoliday(date)">
+        <nz-badge  [nzText]="getHoliday(date).name"></nz-badge>
+      <nz-badge  [nzText]="getHoliday(date).holiday"></nz-badge>
     </ng-container>
   </ul>
   <ng-container *nzMonthCell="let month">
