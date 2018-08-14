@@ -12,11 +12,8 @@ export class DutyRosterHolidaysEditComponent implements OnInit {
   i: any;
   schema: SFSchema = {
     properties: {
-      date1: {
-        type: 'string', title: '开始日期'
-      },
-      date2: {
-        type: 'string', title: '结束日期'
+      date: {
+        type: 'string', title: '日期'
       },
       holiday: {
         type: 'string',
@@ -36,20 +33,16 @@ export class DutyRosterHolidaysEditComponent implements OnInit {
         default: '',
       },
     },
-    required: ['date1','date2', 'holiday', 'name'],
+    required: ['date', 'holiday', 'name'],
   };
   ui: SFUISchema = {
     '*': {
       spanLabelFixed: 80,
       grid: { span: 24 },
     },
-    $date1: {
+    $date: {
       widget: 'date',
-  grid: { span: 12},
-    },
-    $date2: {
-      widget: 'date',
-      grid: { span: 12 },
+  grid: { span: 24},
     },
   };
 
@@ -62,41 +55,29 @@ export class DutyRosterHolidaysEditComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
+  delete(){
+    let info=this.i.info;
+    console.log(info.data);
+    this.dutyRosterService.delete(info).then(
+      res=>{
+        this.close();
+        this.msgSrv.success("删除成功！");
+      },
+      error=>{
+        this.close();
+        this.msgSrv.success(`删除失败！${error}`);
+      }
+    );
+  }
   save(value: any) {
 
-    let date1=new Date(value.date1);
-    let date2=new Date(value.date2);
-    console.log('比较日期');
-    console.log( date1);
-    console.log( date2);
-    if(date1>date2){
-      console.log("起始日期大于借宿日期！");
-    }
-    else{
-      this.dutyRosterService.saveHolidaysBatch(date1,date2,value.holiday,value.name).subscribe(
-        res=>{
-          console.log(res);
-          let response=res as Array<any>;
-          let isSuccessed=true;
-          for(let r of response){
-            console.log(r);
-            if(r.success==null){
-              isSuccessed=false;
-            }
-          }
-          if(isSuccessed){
-            this.close();
-            this.msgSrv.success("保存成功！");
-          }
-          else {
-            this.close();
-            this.msgSrv.error("保存失败！");
-          }
-        }
-      )
-    }
-
+    let date=new Date(value.date);
+    let info=this.i.info;
+    info.date=new Date(value.date);
+    info.holiday=value.holiday;
+    info.name=value.name;
+    this.dutyRosterService.save(info.data);
+    this.close();
   }
 
   close() {

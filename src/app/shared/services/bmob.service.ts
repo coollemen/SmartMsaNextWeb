@@ -33,21 +33,24 @@ export class BmobService {
    * @param {Bmob.Query} query
    * @returns {Promise<T extends BmobData>}
    */
-  public first<T extends BmobData>(query: Bmob.Query,ttype:new() => T): Promise<T> {
+  public first<T extends BmobData>(Type:new()=>T,query: Bmob.Query): Promise<T> {
     let promise: Promise<T>;
     query.first(null).then(result => {
-      let TType: new() => T;
-      let d: T = new TType();
+      let d: T = new Type();
       d.data = result;
       //设置字段数据
       let fields: BmobFieldMetadata[] = Reflect.getMetadata(bmobFieldMetadataKey, d) as BmobFieldMetadata[];
-      for (let f of fields) {
-        d[f.propertyName] = d.data.get(f.fieldName);
+      if (fields !== null && fields !== undefined) {
+        for (let f of fields) {
+          d[f.propertyName] = d.data.get(f.fieldName);
+        }
       }
       //保存属性数据
       let properties: BmobPropertyMetadata[] = Reflect.getMetadata(bmobPropertyMetadataKey, d) as BmobPropertyMetadata[];
-      for (let p of properties) {
-        d[p.propertyName] = d.data.get(p.fieldName);
+      if (properties !== null && properties !== undefined) {
+        for (let p of properties) {
+          d[p.propertyName] = d.data.get(p.fieldName);
+        }
       }
       promise = new Promise(function(resolve, reject) {        //做一些异步操作
         resolve(d);
@@ -66,23 +69,26 @@ export class BmobService {
    * @param {Bmob.Query} query
    * @returns {Promise<T[]>}
    */
-  public find<T extends BmobData>(query: Bmob.Query,ttype:new() => T): Promise<T[]> {
+  public find<T extends BmobData>(Type:new()=>T,query: Bmob.Query): Promise<T[]> {
     let promise: Promise<T[]>;
     return query.find(null).then(results => {
-      let TType: new() => T;
       let datas: T[] = [];
       for (let i = 0; i < results.length; i++) {
-        let d: T = new ttype();
+        let d: T = new Type();
         d.data = results[i];
         //设置字段数据
         let fields: BmobFieldMetadata[] = Reflect.getMetadata(bmobFieldMetadataKey, d) as BmobFieldMetadata[];
-        for (let f of fields) {
-          d[f.propertyName] = d.data.get(f.fieldName);
+        if (fields !== null && fields !== undefined) {
+          for (let f of fields) {
+            d[f.propertyName] = d.data.get(f.fieldName);
+          }
         }
         //保存属性数据
         let properties: BmobPropertyMetadata[] = Reflect.getMetadata(bmobPropertyMetadataKey, d) as BmobPropertyMetadata[];
-        for (let p of properties) {
-          d[p.propertyName] = d.data.get(p.fieldName);
+        if (properties !== null && properties !== undefined) {
+          for (let p of properties) {
+            d[p.propertyName] = d.data.get(p.fieldName);
+          }
         }
         //添加入数组
         datas.push(d);
@@ -137,5 +143,8 @@ export class BmobService {
     console.log('结束保存数据');
     return bmobObj.data.save(null, null);
 
+  }
+  public delete(bmobObj: BmobData){
+    return bmobObj.data.destroy(null);
   }
 }

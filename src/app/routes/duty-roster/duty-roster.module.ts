@@ -9,6 +9,7 @@ import { DutyRosterService } from './services/duty-roster.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DutyRosterHolidaysComponent } from './holidays/holidays.component';
 import { DutyRosterHolidaysEditComponent } from './holidays/edit/edit.component';
+import { DutyRosterHolidaysAddComponent } from './holidays/add/add.component';
 
 
 const COMPONENTS = [
@@ -20,6 +21,7 @@ const COMPONENTS_NOROUNT = [
 
   DutyRosterConfigEditComponent,
   DutyRosterConfigViewComponent,
+  DutyRosterHolidaysAddComponent,
   DutyRosterHolidaysEditComponent];
 
 @NgModule({
