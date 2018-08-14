@@ -76,7 +76,23 @@ export class DutyRosterHolidaysEditComponent implements OnInit {
     else{
       this.dutyRosterService.saveHolidaysBatch(date1,date2,value.holiday,value.name).subscribe(
         res=>{
-          alert(res);
+          console.log(res);
+          let response=res as Array<any>;
+          let isSuccessed=true;
+          for(let r of response){
+            console.log(r);
+            if(r.success==null){
+              isSuccessed=false;
+            }
+          }
+          if(isSuccessed){
+            this.close();
+            this.msgSrv.success("保存成功！");
+          }
+          else {
+            this.close();
+            this.msgSrv.error("保存失败！");
+          }
         }
       )
     }

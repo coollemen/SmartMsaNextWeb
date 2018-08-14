@@ -13,6 +13,13 @@ export class DutyRosterService extends BmobService {
     super();
   }
 
+  /**
+   * 批量添加节假日信息
+   * @param startDate 开始日期
+   * @param endDate 结束日期
+   * @param holiday 节假日类型
+   * @param name 节假日名称
+   */
   public saveHolidaysBatch(startDate: Date, endDate: Date,holiday:string,name:string) {
     let batchheaders = {
       'X-Bmob-Application-Id': '921d1bd493411db02d8bcf1a8562b843',
@@ -21,12 +28,16 @@ export class DutyRosterService extends BmobService {
     };
     let url='https://api.bmob.cn/1/batch';
     let temp=startDate;
-    let holidayInfos:HolidayInfo[]=[];
+    let holidayInfos=[];
     while (temp<=endDate) {
-      let info = new HolidayInfo();
-      info.date = new Date(temp);
-      info.holiday = holiday;
-      info.name = name;
+      let info ={
+        "holiday":holiday,
+        "name":name,
+        "date":{
+          "__type": "Date",
+          "iso":new Date(temp)
+        }
+      };
       holidayInfos.push(info);
       temp.setDate(temp.getDate()+1);
     }
