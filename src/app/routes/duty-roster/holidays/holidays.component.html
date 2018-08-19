@@ -6,7 +6,7 @@
 <nz-calendar [ngModel]="selectedValue" (ngModelChange)="onDateChanged($event)">
   <ul *nzDateCell="let date" class="events">
     <ng-container *ngIf="isHoliday(date)" >
-      <nz-badge [nzStatus]="'error'" [nzText]="getHoliday(date).name" (click)="onDBClick(date)"></nz-badge>
+      <nz-badge [nzStatus]="'error'" [nzText]="getHoliday(date).name" (click)="onDelete(date)"></nz-badge>
       <!--<nz-badge [nzText]="getHoliday(date).holiday"></nz-badge>-->
     </ng-container>
   </ul>

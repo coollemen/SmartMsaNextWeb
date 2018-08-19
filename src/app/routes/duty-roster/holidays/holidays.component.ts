@@ -55,7 +55,13 @@ export class DutyRosterHolidaysComponent implements OnInit {
     let text=`${this.selectedValue.getFullYear()}-${this.selectedValue.getMonth()+1}-${this.selectedValue.getDate()}`;
     this.modal
       .createStatic(DutyRosterHolidaysAddComponent, { i: { date1:text,date2:text} })
-      .subscribe(() => {});
+      .subscribe(() => {
+        this.getHolidayInfosByMonth(this.selectedValue);
+        console.log("新增对话框！");
+      },()=> {
+        this.getHolidayInfosByMonth(this.selectedValue);
+        console.log("error 对话框！");
+      });
   }
   public isHoliday(date:Date):boolean{
     let d=new Date(date);
@@ -78,12 +84,16 @@ export class DutyRosterHolidaysComponent implements OnInit {
       return null;
     }
   }
-  public onDBClick(date:Date){
+  public onDelete(date:Date){
     let text=`${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
     let info=this.getHoliday(date);
     this.modal
       .createStatic(DutyRosterHolidaysEditComponent, { i: { date:text,holiday:info.holiday,name:info.name,info:info} })
-      .subscribe(() => {});
+      .subscribe(() => {
+        this.getHolidayInfosByMonth(this.selectedValue);
+      },() =>{
+        this.getHolidayInfosByMonth(this.selectedValue);
+      } );
   }
   public equleDate(d1:Date,d2:Date):boolean{
     // console.log(typeof d1);

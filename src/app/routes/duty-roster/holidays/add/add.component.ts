@@ -86,11 +86,11 @@ export class DutyRosterHolidaysAddComponent implements OnInit {
             }
           }
           if(isSuccessed){
-            this.close();
+            this.modal.close();
             this.msgSrv.success("保存成功！");
           }
           else {
-            this.close();
+            this.modal.close();
             this.msgSrv.error("保存失败！");
           }
         }
