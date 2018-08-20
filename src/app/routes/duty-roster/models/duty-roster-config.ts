@@ -3,47 +3,47 @@ import { BmobField } from '../../../shared/decorators/bmob-field';
 /**
  * 值班模块配置信息
  */
-@BmobObject('值班表配置')
+@BmobObject('DutyRosterConfig')
 export class DutyRosterConfig {
   /**
    * 协管员名单，24小时值班
    */
-  @BmobField('协管员名单')
+  @BmobField('assistantPeoples')
   public assistantPeoples: string[] = [];
   /**
    * 当前协管员索引，排到后自动下移一位，如果最后一位了自动移到第一位
    */
-  @BmobField('协管员索引')
+  @BmobField('assistantIndex')
   public assistantIndex: number;
   /**
    * 机关海事人员名单，节假日值班
    */
-  @BmobField('海事员名单')
+  @BmobField('msaPeoples')
   public msaPeoples: string[] = [];
   /**
    * 当前海事人员索引，排到后自动下移一位，如果最后一位了自动移到第一位
    */
-  @BmobField('海事员索引')
+  @BmobField('msaIndex')
   public msaIndex: number;
   /**
    * 指挥长人员名单，一周一轮
    */
-  @BmobField('指挥长名单')
+  @BmobField('commanderPeoples')
   public commanderPeoples: string[] = [];
   /**
    * 当前指挥长索引，排到后自动下移一位，如果最后一位了自动移到第一位
    */
-  @BmobField('指挥长索引')
+  @BmobField('commanderIndex')
   public commanderIndex: number;
   /**
    * 领导名单，节假日及节假日前一天值班
    */
-  @BmobField('领导名单')
+  @BmobField('leaderPeoples')
   public leaderPeoples: string[] = [];
   /**
    * 当前领导索引，排到后自动下移一位，如果最后一位了自动移到第一位
    */
-  @BmobField('领导索引')
+  @BmobField('leaderIndex')
   public leaderIndex: number;
 
   public constructor() {

@@ -39,8 +39,8 @@ export class DutyRosterHolidaysComponent implements OnInit {
     // console.log(startDate);
     // console.log(endDate);
     let query= this.dutyRosterService.createQuery(HolidayInfo);
-    query.greaterThan('date',startDate);
-    query.lessThan('date',endDate);
+    query.greaterThanOrEqualTo('date',startDate);
+    query.lessThanOrEqualTo('date',endDate);
     this.dutyRosterService.find<HolidayInfo>(HolidayInfo,query).then(
       res=>{
         this.holidayInfos=res;
