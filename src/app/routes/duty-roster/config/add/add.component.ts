@@ -2,12 +2,15 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NzModalRef, NzMessageService } from 'ng-zorro-antd';
 import { _HttpClient } from '@delon/theme';
 import { SFSchema, SFUISchema } from '@delon/form';
+import { DutyRosterService } from '../../services/duty-roster.service';
+import { DutyPeople } from '../../models/duty-people';
 
 @Component({
-  selector: 'app-duty-roster-config-edit',
-  templateUrl: './edit.component.html',
+  selector: 'app-duty-roster-config-add',
+  templateUrl: './add.component.html',
 })
-export class DutyRosterConfigEditComponent implements OnInit {
+export class DutyRosterConfigAddComponent implements OnInit {
+  record: any = {};
   i: any;
   schema: SFSchema = {
     properties: {
@@ -46,19 +49,35 @@ export class DutyRosterConfigEditComponent implements OnInit {
     },
     required: ['name','type'],
   };
-
   constructor(
     private modal: NzModalRef,
     public msgSrv: NzMessageService,
-    public http: _HttpClient,
+    public dutyRosterService: DutyRosterService,
   ) {}
 
   ngOnInit(): void {
-    console.log(this.i);
   }
 
   save(value: any) {
+    // this.http.post(`/user/${this.record.id}`, value).subscribe(res => {
+    //   this.msgSrv.success('保存成功');
+    //   this.modal.close(true);
+    // });
+    let p=new DutyPeople();
+    p.name=value.name;
+    p.type=value.type;
+    p.last=value.last;
+    p.next=value.next;
+    p.isFirst=value.isFirst;
+    this.dutyRosterService.save(p).then(
+      res=>{
+          this.msgSrv.success('保存成功');
+          this.modal.close(true);
+      },
+        error=>{
 
+        }
+    );
   }
 
   close() {
