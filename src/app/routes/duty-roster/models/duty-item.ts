@@ -1,4 +1,6 @@
-export class DutyItem {
+import { BmobData } from '@shared/models/bmob-data';
+
+export class DutyItem extends BmobData{
   /**
    * 日期
    */

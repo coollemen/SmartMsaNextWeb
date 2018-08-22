@@ -10,13 +10,9 @@ import { DutyPeople } from '../../models/duty-people';
   templateUrl: './add.component.html',
 })
 export class DutyRosterConfigAddComponent implements OnInit {
-  record: any = {};
   i: any;
   schema: SFSchema = {
     properties: {
-      name: {
-        type: 'string', title: '姓名'
-      },
       type: {
         type: 'string',
         title: '类型',
@@ -31,23 +27,16 @@ export class DutyRosterConfigAddComponent implements OnInit {
           widget: 'select'
         }
       },
-      last: {
+      peoples: {
         type: 'string',
-        title: '上一个' ,
-      },
-      next: {
-        type: 'string',
-        title: '下一个' ,
-      },
-      isFirst: {
-        type: 'boolean',
-        title: '是否是第一个' ,
-        ui:{
-          widget: 'boolean'
+        title: '名单(\'**\',\'**\'格式)',
+        default:'[\'某某某\',]',
+        ui: {
+          widget: 'textarea'
         }
       },
     },
-    required: ['name','type'],
+    required: ['peoples','type'],
   };
   constructor(
     private modal: NzModalRef,
@@ -59,16 +48,14 @@ export class DutyRosterConfigAddComponent implements OnInit {
   }
 
   save(value: any) {
-    // this.http.post(`/user/${this.record.id}`, value).subscribe(res => {
-    //   this.msgSrv.success('保存成功');
-    //   this.modal.close(true);
-    // });
     let p=new DutyPeople();
-    p.name=value.name;
     p.type=value.type;
-    p.last=value.last;
-    p.next=value.next;
-    p.isFirst=value.isFirst;
+    var text=value.peoples as string;
+    var reg = new RegExp( '\'' , "g" );
+    text=text.replace(reg,"\"");
+    console.log(text);
+    p.peoples=JSON.parse(text);
+    console.log(p);
     this.dutyRosterService.save(p).then(
       res=>{
           this.msgSrv.success('保存成功');

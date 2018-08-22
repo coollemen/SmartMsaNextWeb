@@ -8,31 +8,23 @@ import { BmobData } from '@shared/models/bmob-data';
 @BmobObject('DutyPeople')
 export class DutyPeople extends BmobData{
   /**
-   * 姓名
-   */
-  @BmobField('name')
-  public name:string;
-  /**
    * 职责类型
    */
   @BmobField('type')
   public type:'领导'|'值班长'|'海事人员'|'协管员';
   /**
-   * 上一个人员姓名
+   * 姓名
    */
-  @BmobField('last')
-  public last:string;
+  @BmobField('peoples')
+  public peoples:string[];
+
   /**
-   * 下一个人员姓名
+   * 索引
    */
-  @BmobField('next')
-  public next:string;
-  /**
-   * 是否是第一个
-   */
-  @BmobField('isFirst')
-  public isFirst:boolean;
+  @BmobField('index')
+  public index:number;
   constructor(){
     super();
+    this.index=0;
   }
 }
