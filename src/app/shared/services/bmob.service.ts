@@ -105,8 +105,19 @@ export class BmobService {
      // return promise;
   }
 
+  /**
+   * 批量保存数据
+   * @param bmobObjs
+   */
   public saveAll(bmobObjs: BmobData[]): any {
-
+    for(var i = 0; i <bmobObjs.length; i++){
+      (function(i,ser){
+        setTimeout(function() {
+         let obj= bmobObjs[i];
+         ser.save(obj);
+        },100);
+      })(i,this);
+    }
   }
 
   /**
@@ -146,5 +157,19 @@ export class BmobService {
   }
   public delete(bmobObj: BmobData){
     return bmobObj.data.destroy(null);
+  }
+  /**
+   * 批量保存数据
+   * @param bmobObjs
+   */
+  public deleteAll(bmobObjs: BmobData[]): any {
+    for(var i = 0; i <bmobObjs.length; i++){
+      (function(i,ser){
+        setTimeout(function() {
+          let obj= bmobObjs[i];
+          ser.delete(obj);
+        },100);
+      })(i,this);
+    }
   }
 }

@@ -1,32 +1,42 @@
 import { BmobData } from '@shared/models/bmob-data';
+import { BmobObject } from '@shared/decorators/bmob-object';
+import { BmobField } from '@shared/decorators/bmob-field';
 
+@BmobObject('DutyItems')
 export class DutyItem extends BmobData{
   /**
    * 日期
    */
+  @BmobField('date')
   public date: Date;
   /**
    * 当天的类型，工作日或节假日
    */
+  @BmobField('type')
   public type: '工作日' | '节假日';
   /**
    * 节假日的名称，如果是节假日的话
    */
-  public holidayName: string;
+  @BmobField('holiday')
+  public holiday: string;
   /**
    * 领导名称
    */
-  public leaderName: string;
+  @BmobField('leader')
+  public leader: string;
   /**
    * 指挥长名称
    */
-  public commanderName: string;
+  @BmobField('commander')
+  public commander: string;
   /**
    * 海事人员名称
    */
-  public msaName: string;
+  @BmobField('msa')
+  public msa: string;
   /**
    * 协管员名称
    */
-  public assistantName: string;
+  @BmobField('assistant')
+  public assistant: string;
 }

@@ -1,13 +1,25 @@
 <page-header>
   <ng-template #action>
-    <nz-month-picker [(ngModel)]="date" (ngModelChange)="onChange($event)" nzPlaceHolder="选择月份" style="padding-right: 16px"></nz-month-picker>
+    <nz-month-picker [(ngModel)]="selectedValue" nzPlaceHolder="选择月份" style="padding-right: 16px"></nz-month-picker>
     <button (click)="createDutyRosterByMonth()" nz-button nzType="primary">查询</button>
-    <button (click)="add()" nz-button nzType="primary">锁定</button>
-    <button (click)="add()" nz-button nzType="danger">解锁</button>
+    <button (click)="saveDutyItems()" nz-button nzType="primary">锁定</button>
+    <button (click)="deleteDutyItems()" nz-button nzType="danger">解锁</button>
+    <button (click)="test()" nz-button nzType="primary">导出Excel</button>
   </ng-template>
 </page-header>
-<nz-card>
-  <sf mode="search" [schema]="searchSchema" (formSubmit)="st.reset($event)" (formReset)="st.reset($event)"></sf>
-  <br>
-  <simple-table #st [data]="url" [columns]="columns"></simple-table>
-</nz-card>
+<nz-calendar [ngModel]="selectedValue" (ngModelChange)="onDateChanged($event)">
+  <ul *nzDateCell="let date" class="events">
+    <ng-container *ngIf="getDutyItem(date)" >
+      <nz-badge *ngIf="getDutyItem(date).leader" [nzStatus]="'error'" [nzText]="getDutyItem(date).leader" ></nz-badge>
+      <nz-badge *ngIf="getDutyItem(date).commander" [nzStatus]="'success'" [nzText]="getDutyItem(date).commander" ></nz-badge>
+      <nz-badge *ngIf="getDutyItem(date).msa" [nzStatus]="'warning'" [nzText]="getDutyItem(date).msa" ></nz-badge>
+      <nz-badge *ngIf="getDutyItem(date).assistant" [nzStatus]="'default'" [nzText]="getDutyItem(date).assistant" ></nz-badge>
+    </ng-container>
+  </ul>
+  <ng-container *nzMonthCell="let month">
+    <div *ngIf="getMonthData(month) as monthData" class="notes-month">
+      <section>{{ monthData }}</section>
+      <span>Backlog number</span>
+    </div>
+  </ng-container>
+</nz-calendar>
